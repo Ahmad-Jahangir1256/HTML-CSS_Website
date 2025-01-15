@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Declares the document type as HTML5 and specifies the language as English -->
+<head>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+      }
+
+  html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Ensures the main content takes up the available space */
+}
+    
+    /* Navbar container */
+      .navbar {
+        display: flex;
+        padding: 10px 22px;
+        font-family: 'Times New Roman', Times, serif;
+      
+      }
+      
+      /* Navigation links (left and right) */
+      .nav-links {
+          position: absolute;
+          left: 50%; /* Center horizontally based on the page width */
+          transform: translateX(-50%);
+          padding-top: 25px;
+          list-style: none;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          gap: 60px;
+      }
+      
+      .nav-links li {
+        position: relative;
+      }
+      
+      .nav-links a {
+        text-decoration: none;
+        font-size: 25px;
+        color: black;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      /* Active link styling */
+      .nav-links a.active {
+        color: orange;
+      }
+      
+      /* Hover effect for links */
+      .nav-links a:hover {
+        color: #ff7f50;
+      }
+      
+      .button-container {
+          position: absolute; /* Use 'fixed' for persistent positioning */
+          top: 30px; /* Distance from top */
+          right: 35px; /* Distance from right */
+      }
+      
+      
+      .gradient-button {
+        background: linear-gradient(90deg, #4a90e2, #a064d1); /* Gradient colors */
+        color: #fff; /* White text */
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 16px 40px;
+        border: 2px solid white; /* White border */
+        border-radius: 30px; /* Full-rounded corners */
+        text-transform: uppercase; /* Uppercase text */
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      
+      .gradient-button:hover {
+        transform: scale(1.05); /* Slight zoom-in effect on hover */
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+      }
+      .gradient-button:active {
+        transform: scale(0.98); /* Pressed effect */
+      }
+      .logo img {
+        height: 100px; /* Adjust height as needed */
+        width: auto; /* Maintain aspect ratio */
+      }
+      .strip {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      /* Creates a flex container for menu buttons, aligns items centrally, and distributes buttons evenly */
+
+      .home, .Catagories, .Artists, .About, .Login {
+        height: 60px;
+        width: 100px;
+        text-align: center;
+        font-weight: bold;
+        color: #52527a;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-image: url("back3.png");
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+      /* Defines a base style for navigation buttons: dimensions, text alignment, borderless design, 
+         rounded corners, hover behavior, and a background image */
+
+      .login {
+        width: 110px;
+      }
+      /* Adds a slight width adjustment for the login button */
+
+      .home:active, .Catagories:active, .Artists:active, .About:active, .Login:active {
+        opacity: 0.3;
+        border: 2px solid rgb(0, 0, 0);
+      }
+      /* Styles buttons when clicked (active state), reducing opacity and adding a black border */
+
+      .home:hover, .Catagories:hover, .Artists:hover, .About:hover, .Login:hover {
+        opacity: 0.7;
+      }
+      /* Changes button opacity when hovered over for visual feedback */
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      /* Styles the header with a gradient background, white text, padding, and a decorative bottom border */
+
+      .header h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin: 0;
+      }
+      /* Centers the main title and sets its size and spacing */
+
+      .header p {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+      /* Styles the subtitle with centering, spacing, and semi-transparent text */
+
+      .category-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px;
+      }
+      /* Creates a responsive flex container for category cards, allowing wrapping and spacing */
+
+      .category-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 320px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      /* Styles individual category cards with a white background, rounded corners, shadows, and hover animations */
+
+      .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      }
+      /* Adds a hover effect that slightly lifts the card with stronger shadows */
+
+      .category-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      /* Ensures category images fit perfectly within the card with no distortion */
+
+      .card-content {
+        padding: 20px;
+        text-align: center;
+      }
+      /* Centers the content inside each card with proper padding */
+
+      .card-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #4facfe;
+      }
+      /* Styles card titles with a unique font size and a blue color */
+
+      .card-content p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      /* Styles card descriptions with muted colors and proper spacing */
+
+      .category-link {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        border: none;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+      }
+      /* Styles the "Explore" links with gradient backgrounds, rounded edges, and smooth hover animations */
+
+      .category-link:hover {
+        background: linear-gradient(to right, #00f2fe, #4facfe);
+        box-shadow: 0 4px 15px rgba(0, 242, 254, 0.6);
+      }
+      /* Styles the footer with a solid background, white text, and spacing */
+
+      .footer {
+  text-align: center;
+  padding: 28px;
+  color: black;
+  margin-top: 0; /* Remove top margin */
+}
+      .footer p {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+      /* Adds subtle text styling to the footer content */
+    </style>
+    <meta charset="UTF-8">
+    <!-- Sets the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures proper scaling on mobile devices -->
+    <title>Art Portfolio</title>
+    <!-- Defines the title of the page -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Loads the 'Poppins' font from Google Fonts -->
+</head>
+<body>
+<!-- head -->
+<nav class="navbar">
+  <div class="logo">
+      <img src="logo.png" alt="logo">
+  </div>
+  <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Catagories.html" class="active">Portfolio</a></li>
+      <li><a href="Artists.html" >Our Artists</a></li>
+      <li><a href="About_Us.html">About Us</a></li>
+  </ul>
+  <div class="button-container">
+      <button class="gradient-button"><a href="login.html">LOGIN</a></button>
+
+  </div>
+</nav>
+  <main class="category-container wrapper">
+    <!-- Main content section displaying category cards -->
+    <div class="category-card item item1">
+      <img src="paint.png" alt="Painting" class="category-image">
+      <div class="card-content">
+        <h2>Painting</h2>
+        <p>Immerse yourself in vibrant colors and breathtaking compositions.</p>
+        <a href="Painting.html" class="category-link">Explore Painting</a>
+      </div>
+    </div>
+    <!-- Additional cards for different categories -->
+    <div class="category-card item item2">
+      <img src="cal3.jpg" alt="Calligraphy" class="category-image">
+      <div class="card-content">
+        <h2>Calligraphy</h2>
+        <p>Unveil the art of graceful strokes and timeless beauty.</p>
+        <a href="Caligraphy.html" class="category-link">Explore Calligraphy</a>
+      </div>
+    </div>
+    <div class="category-card item">
+      <img src="man2.jpg" alt="Mandalas" class="category-image">
+      <div class="card-content">
+        <h2>Mandalas</h2>
+        <p>Discover intricate patterns that promote peace and mindfulness.</p>
+        <a href="Mandalas.html" class="category-link">Explore Mandalas</a>
+      </div>
+    </div>
+    <div class="category-card">
+      <img src="draw2.jpg" alt="Drawing" class="category-image">
+      <div class="card-content">
+        <h2>Drawing</h2>
+        <p>From simple sketches to detailed artworks, let your imagination flow.</p>
+        <a href="Drawings.html" class="category-link">Explore Drawing</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <!-- Footer section -->
+    <p>&copy; 2024 Rang Saaz. Crafted with passion for art lovers.</p>
+  </footer>
+</body>
+</html>

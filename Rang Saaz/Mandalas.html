@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Defines the document as an HTML5 document -->
+    <meta charset="UTF-8">
+    <!-- Specifies the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the webpage responsive to various screen sizes -->
+    <title>Paintings Gallery</title>
+    <!-- Sets the title of the webpage -->
+    <style>
+        /* Resets the box model to include padding and border in the element's total width and height */
+        * {
+            box-sizing: border-box;
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif; /* Specifies the font family */
+            background-color: #f4f4f4; /* Sets a light gray background color */
+            display: flex; /* Enables flexbox layout */
+            flex-direction: column; /* Arranges children in a column */
+            min-height: 100vh; /* Ensures the body height fills the viewport */
+        }
+
+        header {
+            color: white; /* Sets text color to white */
+            padding: 15px 0; /* Adds vertical padding */
+            text-align: center; /* Centers the text */
+        }
+        /* Navbar container */
+.navbar {
+  display: flex;
+  padding: 10px 22px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+/* Navigation links (left and right) */
+.nav-links {
+    position: absolute;
+    left: 50%; /* Center horizontally based on the page width */
+    transform: translateX(-50%);
+    padding-top: 25px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Active link styling */
+.nav-links a.active {
+  color: orange;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #ff7f50;
+}
+
+.button-container {
+    position: absolute; /* Use 'fixed' for persistent positioning */
+    top: 30px; /* Distance from top */
+    right: 35px; /* Distance from right */
+}
+
+
+.gradient-button {
+  background: linear-gradient(90deg, #4a90e2, #a064d1); /* Gradient colors */
+  color: #fff; /* White text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px 40px;
+  border: 2px solid white; /* White border */
+  border-radius: 30px; /* Full-rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.gradient-button:active {
+  transform: scale(0.98); /* Pressed effect */
+}
+.logo img {
+  height: 100px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+        header nav ul {
+            list-style: none; /* Removes default bullet points */
+        }
+
+        header nav ul li {
+            display: inline; /* Displays list items inline */
+            margin: 0 15px; /* Adds horizontal spacing between items */
+        }
+
+        header nav ul li a {
+            color: white; /* Sets link text color to white */
+            text-decoration: none; /* Removes underline from links */
+        }
+
+        .container {
+            display: flex; /* Creates a flex container */
+            flex: 1; /* Allows it to grow and take available space */
+            margin: 20px; /* Adds margin around the container */
+        }
+
+        .sidebar {
+            width: 20%; /* Sidebar width set to 20% of container */
+            background-color: white; /* Sets a white background */
+            padding: 15px; /* Adds padding inside the sidebar */
+            border-right: 1px solid #ddd; /* Adds a light gray right border */
+        }
+
+        .sidebar h2 {
+            margin-bottom: 10px; /* Adds spacing below the heading */
+        }
+
+        .sidebar ul {
+            list-style: none; /* Removes default list styling */
+        }
+
+        .sidebar ul li {
+            margin: 5px 0; /* Adds vertical spacing between list items */
+        }
+
+
+        .gallery {
+    display: grid; /* Enables grid layout for gallery items */
+    grid-template-columns: repeat(2, 1fr); /* Ensures two items per row */
+    gap: 25px; /* Adds spacing between items */
+    width: 80%; /* Sets gallery width to 80% of the container */
+}
+
+
+        .item {
+            background-color: white; /* Sets a white background */
+            border: 1px solid #ddd; /* Adds a light gray border */
+            border-radius: 5px; /* Rounds the corners */
+            overflow: hidden; /* Ensures content stays within the box */
+            text-align: center; /* Centers the text inside the item */
+            padding: 10px; /* Adds padding inside the item */
+        }
+
+        .item img {
+            max-width: 100%; /* Ensures images do not exceed the item's width */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        .item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+            transform: scale(1.05); /* Slightly enlarges the item */
+            transition: all 0.3s ease-in-out; /* Smooth transition effect */
+        }
+
+        footer {
+            text-align: center; /* Centers footer content */
+            padding: 15px 0; /* Adds vertical padding */
+            color: black; /* Sets text color to white */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="Catagories.html" class="active">Portfolio</a></li>
+                <li><a href="Artists.html" class="active">Our Artist</a></li>
+                <li><a href="About_Us.html" class="active">About Us</a></li>
+            </ul>
+            <div class="button-container">
+                <button class="gradient-button"><a href="login.html">LOGIN</a></button>
+          
+    </header>
+    
+    <div class="container">
+        <!-- Main container holding the sidebar and gallery -->
+        <aside class="sidebar">
+            <!-- Sidebar with categories -->
+            <h2><a href="Catagories.html">Catagories</a></h2>
+            <ul>
+                <!-- Links to specific categories -->
+                <li><a href="Painting.html">Paintings</a></li>
+                <li><a href="Caligraphy.html">Calligraphy</a></li>
+                <li><a href="Mandalas.html">Mandalas</a></li>
+                <li><a href="Drawings.html">Drawings</a></li>
+            </ul>
+        </aside>
+        
+        <main class="gallery">
+            <!-- Main gallery with individual items -->
+            <div class="item">
+                <!-- Single item with an image, title, and description -->
+                <img src="Mandalas/Wild Rose.jpg" alt="Wild Rose">
+                <h3>Wild Rose</h3>
+                <p class="category">Mandalas</p>
+                <p>The Wild Roses. A work sized 47" x 47" (120cm x 120cm) mixed media of Oils including Wild Rose Oils with Gold leaf on Canvas. Within the circle amongst the many thorns are 6 rose flowers, 5 rose buds, 10 rose hearts and 40 rose-hips.</p>
+            </div>
+            <div class="item">
+                <img src="Mandalas/English Blue Bell.jpg" alt="English Blue Bell">
+                <h3>English Blue Bell</h3>
+                <p class="category">Mandalas</p>
+                <p>>Mandala of English Bluebell. A painting about being in the bluebell woods. Artwork sized 47" x 47" (120cm x 120cm) mixed media (including bluebell oil) with gold leaf on canvas. Within the circle of 6 large bells are 12 small bells, 48 bluebell buds three of which are white and one of which is pink., together with 5 open blooms and one pentangle.</p>
+            </div>
+            <div class="item">
+                <img src="Mandalas/Mandala of seven 1999.jpg" alt="Mandala of seven 1999">
+                <h3>Mandala of seven 1999</h3>
+                <p class="category">Mandalas</p>
+                <p>Seven. A work about universality sized 55" x 55" (140cm x 140cm) Gouache and ink with the Gold leaf on paper.</p>
+            </div>
+            <div class="item">
+                <img src="Mandalas/30 slipper Orchids.jpg" alt="30 slipper Orchids">
+                <h3>30 slipper Orchids</h3>
+                <p class="category">Mandalas</p>
+                <p>30 Slipper Orchids. A work sized 28" x 28" (70cm x 70cm) Gouache and ink with the Gold leaf on paper</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; 2024 Rang Sazz</p>
+    </footer>
+</body>
+</html>

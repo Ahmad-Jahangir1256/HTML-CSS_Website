@@ -1,0 +1,236 @@
+<html>
+
+<style>
+    .strip {
+        background-color: rgb(88, 81, 81);
+        width: 100% ;
+        height: 150px ;
+    }
+
+    .home {
+        height: 60px ;
+        width: 100px ;
+        text-align: center;
+        border: none;
+        font-weight: bold;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .home:active {
+        opacity: 0.3;
+    }
+    .home:hover {
+        opacity: 0.7;
+    }
+
+    .Catagories {
+        height: 60px ;
+        width: 100px ;
+        text-align: center;
+        border: none;
+        font-weight: bold;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .Catagories:active {
+        opacity: 0.3;
+    }
+    .Catagories:hover {
+        opacity: 0.7;
+    }
+    
+    .Artists {
+        height: 60px ;
+        width: 100px ;
+        text-align: center;
+        border: none;
+        font-weight: bold;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .Artists:active {
+        opacity: 0.3;
+    }
+    .Artists:hover {
+        opacity: 0.7;
+    }
+
+    .About {
+        height: 60px ;
+        width: 100px ;
+        text-align: center;
+        border: none;
+        font-weight: bold;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .About:active {
+        opacity: 0.3;
+    }
+    .About:hover {
+        opacity: 0.7;
+    }
+
+    .Login {
+        height: 60px ;
+        width: 200px ;
+        text-align: center;
+        border: none;
+        margin-left: 65% ;
+        font-weight: bold;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .login:active {
+        opacity: 0.3;
+    }
+    .login:hover {
+        opacity: 0.7;
+    }
+
+    .Paint {
+        width: 38% ;
+        height: 50% ;
+        border-color: rgb(20, 156, 88);
+        border-style: solid;
+        font-size: xx-large;
+        font-weight: bold;
+        font-family: Blenda;
+        text-align: center;
+        background-image: url("paint.png");
+        cursor: pointer;
+        margin-right: 50px;
+        margin-left: 160px;
+    }
+    .Paint:active {
+        opacity: 0.3;
+    }
+    .Paint:hover {
+        opacity: 0.7;
+    }
+
+    .Cal {
+        width: 38% ;
+        height: 50% ;
+        border-style: solid;
+        font-size: xx-large;
+        font-weight: bold;
+        font-family: Blenda;
+        text-align: center;
+        background-image: url("cal3.jpg");
+        cursor: pointer;
+    }
+    .Cal:active {
+        opacity: 0.3;
+    }
+    .Cal:hover {
+        opacity: 0.7;
+    }
+
+    .Mandalas {
+        width: 38% ;
+        height: 50% ;
+        border-style: solid;
+        font-size: xx-large;
+        font-weight: bold;
+        font-family: Blenda;
+        background-image: url("man2.jpg");
+        cursor: pointer;
+        margin-right: 50px;
+        margin-left: 160px;
+    }
+    .Mandalas:active {
+        opacity: 0.3;
+    }
+    .Mandalas:hover {
+        opacity: 0.7;
+    }
+
+
+    .Draw {
+        width: 38% ;
+        height: 50% ;
+        border-style: solid;
+        font-size: xx-large;
+        font-weight: bold;
+        font-family: Blenda;
+        text-align: center;
+        background-image: url("draw2.jpg");
+        cursor: pointer;
+    }
+
+    .Draw:active {
+        opacity: 0.3;
+    }
+    .Draw:hover {
+        opacity: 0.7;
+    }
+
+</style>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale-1.0">
+    <title>
+        Catagories
+    </title>
+</head>
+
+<body style="background-size: 100% 100%; background-attachment: fixed;">
+    <p class="strip">
+
+    </p>
+    <button class="Home">
+        Home
+    </button>
+    <button class="Catagories">
+        Catagories
+    </button>
+    <button class="Artists">
+        Artists
+    </button>
+    <button class="About">
+        About Us
+    </button>
+    <button class="Login">
+        Login / Sign Up
+    </button>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <button class="Paint">
+        Paintings
+    </button>
+
+    <button class="Cal">
+        Caligraphy
+    </button>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <button class="Mandalas">
+        Mandalas
+    </button>
+    <button class="Draw">
+        Drawings
+    </button>
+</body>
+
+
+</html>

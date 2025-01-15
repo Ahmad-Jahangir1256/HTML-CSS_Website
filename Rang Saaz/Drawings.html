@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- Specifies the document type as HTML5 -->
+<html lang="en">
+<!-- Defines the start of the HTML document and sets the language to English -->
+<head>
+    <!-- Contains metadata and links related to the document -->
+    <meta charset="UTF-8">
+    <!-- Sets the character encoding of the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page scales properly on different devices -->
+    <title>Paintings Gallery</title>
+    <!-- Sets the title of the web page -->
+
+    <style>
+        /* CSS styling for the page */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        /* Applies universal box-sizing and removes default margin/padding */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Sets the body background image and fallback color, font, layout as flexbox, and a minimum height of 100% viewport height */
+
+        header {
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        /* Navbar container */
+.navbar {
+  display: flex;
+  padding: 10px 22px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+/* Navigation links (left and right) */
+.nav-links {
+    position: absolute;
+    left: 50%; /* Center horizontally based on the page width */
+    transform: translateX(-50%);
+    padding-top: 25px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Active link styling */
+.nav-links a.active {
+  color: orange;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #ff7f50;
+}
+
+.button-container {
+    position: absolute; /* Use 'fixed' for persistent positioning */
+    top: 30px; /* Distance from top */
+    right: 35px; /* Distance from right */
+}
+
+
+.gradient-button {
+  background: linear-gradient(90deg, #4a90e2, #a064d1); /* Gradient colors */
+  color: #fff; /* White text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px 40px;
+  border: 2px solid white; /* White border */
+  border-radius: 30px; /* Full-rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.gradient-button:active {
+  transform: scale(0.98); /* Pressed effect */
+}
+.logo img {
+  height: 100px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+        /* Styles the header with a gradient background, white text, padding, and centered content */
+
+        header nav ul {
+            list-style: none;
+        }
+        /* Removes bullet points from the navigation list */
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        /* Displays navigation list items inline with spacing */
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        /* Styles navigation links with white color and removes underline */
+
+        .container {
+            display: flex;
+            flex: 1;
+            margin: 20px;
+        }
+        /* Creates a flex container for the main content and adds margin */
+
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+        /* Styles the sidebar with a background image, white color, padding, and a border */
+
+        .sidebar h2 {
+            margin-bottom: 10px;
+        }
+        /* Adds space below the sidebar heading */
+
+        .sidebar ul {
+            list-style: none;
+        }
+        /* Removes bullet points from the sidebar list */
+
+        .sidebar ul li {
+            margin: 5px 0;
+        }
+
+        /* Adds a background image to all div elements */
+
+        .gallery {
+    display: grid; /* Enables grid layout for gallery items */
+    grid-template-columns: repeat(2, 1fr); /* Ensures two items per row */
+    gap: 25px; /* Adds spacing between items */
+    width: 80%; /* Sets gallery width to 80% of the container */
+}
+
+
+        .item {
+            background-color: white; /* Sets a white background */
+            border: 1px solid #ddd; /* Adds a light gray border */
+            border-radius: 5px; /* Rounds the corners */
+            overflow: hidden; /* Ensures content stays within the box */
+            text-align: center; /* Centers the text inside the item */
+            padding: 10px; /* Adds padding inside the item */
+        }
+
+        /* Styles gallery items with a white background, border, rounded corners, and padding */
+
+        .item img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Ensures images inside gallery items are responsive */
+
+        .item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+        /* Adds hover effects to gallery items with a shadow and slight zoom */
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            color: black;
+        }
+        /* Styles the footer with a gradient background, centered text, and padding */
+
+    </style>
+</head>
+<body>
+    <!-- Body section containing the visible content -->
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="Catagories.html"class="active">Portfolio</a></li>
+                <li><a href="Artists.html"class="active">Our Artist</a></li>
+                <li><a href="About_Us.html" class="active">About Us</a></li>
+            </ul>
+            <div class="button-container">
+                <button class="gradient-button"><a href="login.html">LOGIN</a></button>
+          
+    </header>
+    
+    <div class="container">
+        <!-- Main container for sidebar and gallery -->
+        <aside class="sidebar">
+            <!-- Sidebar section -->
+            <h2><a href="Catagories.html">Catagories</a></h2>
+            <!-- Sidebar heading with link -->
+            <ul>
+                <li><a href="Painting.html">Paintings</a></li>
+                <!-- Sidebar link to Paintings -->
+                <li><a href="Caligraphy.html">Calligraphy</a></li>
+                <!-- Sidebar link to Calligraphy -->
+                <li><a href="Mandalas.html">Mandalas</a></li>
+                <!-- Sidebar link to Mandalas -->
+                <li><a href="Drawings.html">Drawings</a></li>
+                <!-- Sidebar link to Drawings -->
+            </ul>
+        </aside>
+        
+        <main class="gallery">
+            <!-- Gallery section for displaying images -->
+            <div class="item">
+                <!-- Individual gallery item -->
+                <img src="image3.jpg" alt="Ilistration">
+                <!-- Image with description -->
+                <h3>Illistration</h3>
+                <!-- Item title -->
+                <p class="category">Drawings</p>
+                <!-- Category label -->
+                <p>The artist has captured the detail of the hand and the glass in a way that is both realistic and expressive.
+                    The hand is depicted in a realistic style. </p>
+                <!-- Detailed description of the item -->
+            </div>
+            <div class="item">
+                <img src="image2.jpg" alt="Night Bear">
+                <h3>Chess board</h3>
+                <p class="category">Drawings</p>
+                <p>The image is a pencil drawing with several chess pieces arranged on it.
+                    The chessboard is drawn in a realistic perspective, with the squares shaded to give the impression of depth.</p>
+            </div>
+            <div class="item">
+                <img src="drawing.1.png" alt="Cat">
+                <h3>Leopard</h3>
+                <p class="category">Drawings</p>
+                <p>The drawing depicts a Cat in a realistic style. The animal is rendered in shades of gray, highlighting the intricate patterns of the leopard's spots and fur.</p>
+            </div>
+            <div class="item">
+                <img src="Drawings/d4.png" alt="Railway">
+                <h3>Railway</h3>
+                <p class="category">Drawings</p>
+                <p>A black and white pencil drawing depicts a train station, with a train partially visible on the left side of the picture. The train is facing the right side, with the carriage windows visible. </p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <!-- Footer section -->
+        <p>&copy; 2024 Rang Sazz</p>
+        <!-- Copyright notice -->
+    </footer>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangsaaz-home</title>
+    <style>
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  padding: 10px 22px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+/* Navigation links (left and right) */
+.nav-links {
+    position: absolute;
+    left: 50%; /* Center horizontally based on the page width */
+    transform: translateX(-50%);
+    padding-top: 25px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Active link styling */
+.nav-links a.active {
+  color: orange;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #ff7f50;
+}
+
+.button-container {
+    position: absolute; /* Use 'fixed' for persistent positioning */
+    top: 30px; /* Distance from top */
+    right: 35px; /* Distance from right */
+}
+
+
+.gradient-button {
+  background: linear-gradient(90deg, #4a90e2, #a064d1); /* Gradient colors */
+  color: #fff; /* White text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px 40px;
+  border: 2px solid white; /* White border */
+  border-radius: 30px; /* Full-rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.gradient-button:active {
+  transform: scale(0.98); /* Pressed effect */
+}
+.logo img {
+  height: 100px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 50px 50px;
+        background: radial-gradient(circle, rgba(247, 211, 225, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    background-repeat: repeat-x;
+    background-size: 400px 400px;
+    }
+
+    .text-content {
+    max-width: 50%;
+    margin-top: -5px;
+    }
+
+    .text-content h1 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 4.5rem;
+        margin-top: 10px;
+        padding-left: 50px;
+    }
+
+    .text-content p {
+        font-size: 1.2rem;
+        padding-top: 20px;
+        line-height: 1.8;
+        padding-left: 50px;
+    }
+.image-content {
+    max-width: 95%;
+    display: flex;
+    justify-content: center;
+    }
+
+    .image-content img {
+    max-width: 100%;
+    height: auto;
+    }
+/* aritist choice section */
+.main-section {
+  padding: 30px 10px; /* Space around the entire section */
+  text-align: center; /* Centers the heading text */
+}
+
+.main-heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #333;
+}
+.section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 100px; /* Space between grid items */
+    padding: 85px;
+    
+}
+
+.content {
+  text-align: center;
+  position: relative;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+.content h2 span {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 8rem;
+  color: rgba(115, 15, 93, 0.1); 
+  position: absolute;
+  top: -80px;
+  left: -10px;
+  z-index: -1; /* Push the number behind the text */
+}
+
+.content p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.content img {
+  width: 80%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  gap: 12.5rem;
+}
+/* Popular Work Section */
+.popular-work {
+    text-align: center;
+    padding: 2rem;
+    background: radial-gradient(circle, rgba(248, 215, 228, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    background-repeat: round;
+    background-size: 300px 300px; /* Size of the gradient spot */
+    padding: 2rem;
+}
+
+.popular-work h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Work Container */
+.work-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.75rem;
+    padding: 0 2rem;
+}
+
+/* Work Card */
+.work-card {
+    background: #fff;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 1rem;
+    height: 350px;
+}
+.work-card img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover;
+    border-bottom: 2px solid #f8d7e4; 
+}
+
+.work-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.work-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: auto;
+}
+
+/* Hover Effect */
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 20px 15px rgba(107, 56, 110, 0.345);
+}
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("banner.png");
+    width: 100%;
+    height:auto;
+    padding: 250px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 50px; 
+    margin-bottom: 50px;
+}
+#banner h4{
+    color: #fff;
+    font-size: 2.5rem;
+}
+/* Art Gallery Section */
+.art-gallery-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+/* Footer */
+.footer {
+    background-color: #fff;
+    color: #333;
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.footer-logo img {
+    margin-top: 30px;
+    margin-right: 40px;
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin: 50px 65px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ff6600;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="Catagories.html">Portfolio</a></li>
+            <li><a href="Artists.html">Our Artist</a></li>
+            <li><a href="About_Us.html">About Us</a></li>
+        </ul>
+        <div class="button-container">
+            <button class="gradient-button"><a href="login.html">LOGIN</a></button>
+
+        </div>
+    </nav>
+    <section class="container">
+            <div class="text-content">
+                <h1>Welcome to </h1>
+                <h1 >Rangsaaz</h1>
+                <p>
+                    They say that art is expression and expression is art. Discover new ways to express your inner thoughts in
+                    colors and brushstrokes. We welcome you to this magical world of art, masterpieces and amazing collections! We display, borrow and collect artworks from
+                    around the world.
+                </p>
+            </div>
+        <div class="image-content">
+            <img src="main-img.png" alt="image">
+        </section>
+<!-- ARTIST PICKS -->
+<div class="main-section">
+    <h1 class="main-heading">Top Artist's Pick</h1> <!-- Centralized Heading -->
+<div class="section">
+    <div class="content">
+    <h2><span>01</span>Wanderer Above the Sea of Fog</h2>
+    <p>This iconic masterpiece by Caspar David Friedrich captures the sublime beauty of nature, evoking a sense of awe and
+        introspection as the figure gazes into the misty horizon.</p>
+        <img src="image12.jpg" alt="Wanderer above the sea of fog">
+    </div>
+
+    <div class="content" style="padding-top: 150px;">
+        <h2><span>02</span>Café Terrace at Night</h2>
+        <p>Vincent van Gogh's enchanting depiction of a warm evening scene invites viewers to experience the charm of a bustling
+            café under a starlit sky.</p>
+        <img src="image5.jpg" alt="cafe terrace at night">
+    </div>
+
+    <div class="content">
+        <h2><span>03</span>Starry Night</h2>
+        <p>Caspar David Friedrich's masterpiece captures the awe of nature as the figure gazes over a misty horizon.</p>
+        <img src="image9.jpg" alt="Starry-night">
+    </div>
+</div>
+</div>
+
+<!-- POPULAR WORK -->
+    <section class="popular-work">
+        <h2>Popular Work</h2>
+        <div class="work-container">
+            <!-- Card 1 -->
+            <div class="work-card">
+                <img src="image4.jpg" alt="Wall Painting">
+                <h3>Abstract Wonders</h3>
+                <p>Transform your space with modern abstract designs that inspire creativity and imagination.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="work-card">
+                <img src="image1.jpg" alt="Wall Painting">
+                <h3>Bold Expressions</h3>
+                <p>Make a statement with vibrant colors and designs that exude confidence and style.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="work-card">
+                <img src="image6.jpg" alt="Wall Painting">
+                <h3>Nature's Serenity</h3>
+                <p>Experience tranquility with artwork inspired by the beauty of natural landscapes.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="work-card">
+                <img src="image7.jpg" alt="Wall Painting">
+                <h3>Timeless Classics</h3>
+                <p>Adorn your walls with elegant pieces that blend tradition with a contemporary touch.</p>
+            </div>
+        </div>
+<!-- banner -->
+    </section>
+        <section id="banner" class="section-m1">
+            <h4>"If you hear a voice within you saying, "You are not a painter, then by all means paint, boy, and that voice will be
+            silenced" <br> - Van Gogh Vincent</h4>
+        </section>
+    <section class="art-gallery-section">
+        <h1 class="gallery-title">Art Gallery</h1>
+        <div class="gallery">
+            <div class="gallery-item"><img src="image10.jpg" alt="Artwork 1"></div>
+            <div class="gallery-item"><img src="image8.png" alt="Artwork 2"></div>
+            <div class="gallery-item"><img src="image2.jpg" alt="Artwork 3"></div>
+            <div class="gallery-item"><img src="image11.jpg" alt="Artwork 4"></div>
+            <div class="gallery-item"><img src="image3.jpg" alt="Artwork 5"></div>
+            <div class="gallery-item"><img src="image13.jpg" alt="Artwork 6"></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <img src="logo.png" alt="Website Logo">
+            </div>
+    
+            <!-- Important Links -->
+            <div class="footer-column">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">Portfolio</a></li>
+                    <li><a href="#projects">Our Artists</a></li>
+                    <li><a href="#contact">About Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>+92 123-0011221101</li>
+                    <li><a href="mailto:Ictproject@gmaicoml.">IctProject@gmail.com</a></li>
+                    <li>Bahria University H-11, Islamabad</li>
+                </ul>
+            </div>
+    
+            <!-- Social Links -->
+            <div class="footer-column">
+                <h3>Social Links</h3>
+                <ul>
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2024 - Rangsaaz | Designed by Team</p>
+        </div>
+    </footer>
+</body>
+</html>

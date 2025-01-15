@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paintings Gallery</title>
+    <style>
+        /* Resets the box model to include padding and border in the element's total width and height */
+        * {
+            box-sizing: border-box;
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif; /* Specifies the font family */
+            background-color: #f4f4f4; /* Sets a light gray background color */
+            display: flex; /* Enables flexbox layout */
+            flex-direction: column; /* Arranges children in a column */
+            min-height: 100vh; /* Ensures the body height fills the viewport */
+        }
+
+        header {
+            color: white; /* Sets text color to white */
+            padding: 15px 0; /* Adds vertical padding */
+            text-align: center; /* Centers the text */
+        }
+        /* Navbar container */
+.navbar {
+  display: flex;
+  padding: 10px 22px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+/* Navigation links (left and right) */
+.nav-links {
+    position: absolute;
+    left: 50%; /* Center horizontally based on the page width */
+    transform: translateX(-50%);
+    padding-top: 25px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Active link styling */
+.nav-links a.active {
+  color: orange;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #ff7f50;
+}
+
+.button-container {
+    position: absolute; /* Use 'fixed' for persistent positioning */
+    top: 30px; /* Distance from top */
+    right: 35px; /* Distance from right */
+}
+
+
+.gradient-button {
+  background: linear-gradient(90deg, #4a90e2, #a064d1); /* Gradient colors */
+  color: #fff; /* White text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px 40px;
+  border: 2px solid white; /* White border */
+  border-radius: 30px; /* Full-rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.gradient-button:active {
+  transform: scale(0.98); /* Pressed effect */
+}
+.logo img {
+  height: 100px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+        header nav ul {
+            list-style: none; /* Removes default bullet points */
+        }
+
+        header nav ul li {
+            display: inline; /* Displays list items inline */
+            margin: 0 15px; /* Adds horizontal spacing between items */
+        }
+
+        header nav ul li a {
+            color: white; /* Sets link text color to white */
+            text-decoration: none; /* Removes underline from links */
+        }
+
+        .container {
+            display: flex; /* Creates a flex container */
+            flex: 1; /* Allows it to grow and take available space */
+            margin: 20px; /* Adds margin around the container */
+        }
+
+        .sidebar {
+            width: 20%; /* Sidebar width set to 20% of container */
+            background-color: white; /* Sets a white background */
+            padding: 15px; /* Adds padding inside the sidebar */
+            border-right: 1px solid #ddd; /* Adds a light gray right border */
+        }
+
+        .sidebar h2 {
+            margin-bottom: 10px; /* Adds spacing below the heading */
+        }
+
+        .sidebar ul {
+            list-style: none; /* Removes default list styling */
+        }
+
+        .sidebar ul li {
+            margin: 5px 0; /* Adds vertical spacing between list items */
+        }
+
+        .gallery {
+    display: grid; /* Enables grid layout for gallery items */
+    grid-template-columns: repeat(2, 1fr); /* Ensures two items per row */
+    gap: 25px; /* Adds spacing between items */
+    width: 80%; /* Sets gallery width to 80% of the container */
+}
+
+
+        .item {
+            background-color: white; /* Sets a white background */
+            border: 1px solid #ddd; /* Adds a light gray border */
+            border-radius: 5px; /* Rounds the corners */
+            overflow: hidden; /* Ensures content stays within the box */
+            text-align: center; /* Centers the text inside the item */
+            padding: 10px; /* Adds padding inside the item */
+        }
+
+        .item img {
+            max-width: 100%; /* Ensures images do not exceed the item's width */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        .item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+            transform: scale(1.05); /* Slightly enlarges the item */
+            transition: all 0.3s ease-in-out; /* Smooth transition effect */
+        }
+
+        footer {
+            text-align: center; /* Centers footer content */
+            padding: 15px 0; /* Adds vertical padding */
+            color: black; /* Sets text color to white */
+        }
+    </style>
+</head>
+<body>
+    <!-- Page header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="Catagories.html" class="active">Portfolio</a></li>
+                <li><a href="Artists.html" class="active">Our Artist</a></li>
+                <li><a href="About_Us.html" class="active">About Us</a></li>
+            </ul>
+            <div class="button-container">
+                <button class="gradient-button"><a href="login.html">LOGIN</a></button>
+          
+    </header>
+    
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Sidebar for categories -->
+        <aside class="sidebar">
+            <h2><a href="Catagories.html">Portfolio</a></h2>
+            <ul>
+                <li><a href="Painting.html">Paintings</a></li>
+                <li><a href="Caligraphy.html">Calligraphy</a></li>
+                <li><a href="Mandalas.html">Mandalas</a></li>
+                <li><a href="Drawings.html">Drawings</a></li>
+            </ul>
+        </aside>
+        
+        <!-- Gallery of paintings -->
+        <main class="gallery">
+            <!-- Individual gallery item -->
+            <div class="item">
+                <img src="Painting/C​afé​ Terrace at Night.webp" alt="C​afé​ Terrace at Night">
+                <h3>C​afé​ Terrace at Night</h3>
+                <p class="category">Paintings</p>
+                <p>The subject matter of Café Terrace at Night is a yellow cafe with a bright sky strewn with stars, a few people sitting or strolling on the terrace in front of the cafe, and a cobbled street where the houses have yellow lights emitting from their windows.</p>
+            </div>
+            <div class="item">
+                <img src="Painting/Sttray Night.jpg" alt="Starry Night">
+                <h3>Starry Night</h3>
+                <p class="category">Paintings</p>
+                <p>This mid-scale, oil-on-canvas painting is dominated by a moon- and star-filled night sky. It takes up three-quarters of the picture plane and appears turbulent, even agitated.</p>
+            </div>
+            <div class="item">
+                <img src="Painting/Water Lillys.jpg" alt="Water Lilies">
+                <h3>Water Lilies</h3>
+                <p class="category">Paintings</p>
+                <p>This vision materialized in the form of some forty large-scale panels, Water Lilies among them, that Monet produced and continuously reworked from 1914 until his death in 1926. At this triptych's center, lilies bloom in a luminous pool of green and blue that is frothed with lavender-tinged reflections of clouds.</p>
+            </div>
+            <div class="item">
+                <img src="Painting/Sunrise.jpg" alt="Sunrise">
+                <h3>Sunrise</h3>
+                <p class="category">Paintings</p>
+                <p>Subject and interpretation. Impression, Sunrise depicts the port of Le Havre at sunrise, the two small rowboats in the foreground and the red Sun being the focal elements. In the middle..</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 Rang Sazz</p>
+    </footer>
+</body>
+</html>

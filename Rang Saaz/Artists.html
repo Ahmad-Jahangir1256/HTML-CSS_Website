@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists -رنگ ریز </title>
+    <style>
+body
+{
+    font-family: Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+h1
+{
+    text-align: center;
+    font-size: 2em;
+    color: black;
+}
+.artists 
+{
+    display: flex;              
+    flex-wrap: wrap;           
+    justify-content: space-between; 
+    padding: 20px;
+}
+
+.artist-card 
+{
+    width: 46%;               
+    margin-bottom: 20px;     
+    padding: 20px;           
+    border-radius: 8px;        
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;        
+}
+
+
+.artist-card img 
+{
+    max-width: 100%;            
+    height: auto;               
+    border-radius: 5px;
+    background-color: white;        
+}
+
+.artist-card p 
+{
+    font-size: 1.2em;             
+    color: #555;               
+}
+.artist-card h1 
+{
+    font-size: 3em;             
+    color: black;               
+}
+.artist-card h2 
+{
+    font-size: 2em;             
+    color: black;               
+}
+footer 
+{
+    text-align: center;
+    padding: 20px; 
+    background-color: white;
+    color: black;
+}
+/* Navbar styling */
+/* Logo */
+.logo img 
+{
+  width: 100px; /* Logo width */
+  height: auto; /* Logo height */
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  padding: 10px 22px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+/* Navigation links (left and right) */
+.nav-links {
+    position: absolute;
+    left: 50%; /* Center horizontally based on the page width */
+    transform: translateX(-50%);
+    padding-top: 25px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Active link styling */
+.nav-links a.active {
+  color: orange;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #ff7f50;
+}
+
+.button-container {
+    position: absolute; /* Use 'fixed' for persistent positioning */
+    top: 30px; /* Distance from top */
+    right: 35px; /* Distance from right */
+}
+.gradient-button {
+  background: linear-gradient(90deg, #4a90e2, #a064d1); /* Gradient colors */
+  color: #fff; /* White text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px 40px;
+  border: 2px solid white; /* White border */
+  border-radius: 30px; /* Full-rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.gradient-button:active {
+  transform: scale(0.98); /* Pressed effect */
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Catagories.html">Portfolio</a></li>
+            <li><a href="Artists.html" class="active">Our Artist</a></li>
+            <li><a href="About_Us.html">About Us</a></li>
+        </ul>
+        <div class="button-container">
+            <button class="gradient-button"><a href="login.html">LOGIN</a></button>
+
+        </div>
+    </nav>
+    <h1>Meet Our Artists </h1>
+    <section class="artists">
+        
+        <div class="artist-card">
+            <img src="artist1.jpg" alt="Abdur Rehman"/>
+            <h2>Abdur Rehman</h2>
+            <p>Abdur Rehman specializes in creating intricate, symmetrical mandala art, using geometric patterns and vibrant colors to evoke a sense of balance, harmony, and spiritual tranquility.</p>
+        </div>
+        <div class="artist-card">
+            <img src="artist2.jpg" alt="Ahmad Jahangir"/>
+            <h2>Ahmad Jahangir</h2>
+            <p>Ahmad Jahangir specializes in drawing intricate, detailed illustrations that blend realism with surreal elements, using fine lines and shading techniques to create captivating, imaginative scenes.</p>
+        </div>
+        <div class="artist-card">
+            <img src="artist3.jpg" alt="Hamna Syed"/>
+            <h2>Hamna Syed</h2>
+            <p>Hamna Syed specializes in elegant calligraphy, mastering the art of fluid, decorative lettering with a focus on precision, style, and the beauty of written words.</p>
+        </div>
+        <div class="artist-card">
+            <img src="artist4.jpg" alt="Asheer Ali"/>
+            <h2>Asheer Ali</h2>
+            <p>Asheer Ali specializes in painting, blending vibrant colors and dynamic brushstrokes to capture emotions, scenes, and abstract concepts with a unique, expressive style.</p>
+        </div>
+    </section>
+    <footer>
+        <footer>
+            <p>&copy; 2024 رنگ ریز. All rights reserved.</p>
+        </footer>
+    </footer>
+    
+    
+</body>
+</html>
